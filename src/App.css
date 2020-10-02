@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.user-pass-input {
+  flex-direction: column;
+  display: flex;
+}
+
+.user-pass-container {
+
+}
