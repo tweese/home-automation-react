@@ -1,18 +1,15 @@
-import React from 'react'
+import React, {useState, useContext} from 'react'
 import './App.css';
-import Login from './Login'
-import Home from './Home'
-import {BrowserRouter as Router, Route} from "react-router-dom"
+import Routes from "./state/Routes"
+import Store from "./state/Store"
 
 export default function App() {
-    
-  return (
-    <Router>
-        <Route exact path="/" render={()=> <Login/>}/>
-        <Route exact path="/Home" render={()=> <Home/>}/>
 
-    </Router>
-  );
+    return (
+        <Store>
+            <Routes></Routes>
+        </Store>
+    );
 }
 
 // /*fox for cores*/
