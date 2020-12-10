@@ -1,0 +1,29 @@
+name: productiondeploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: node installer
+        uses: actions/setup-node@v1
+        with:
+          node-version: "10.22.0"
+
+      - name: cdk installer
+        run: npm install -g aws-cdk
+
+
+#install node
+#cdk install
+#clone code
+#npm install
+#npm build
+#cdk deploy

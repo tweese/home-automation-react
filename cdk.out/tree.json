@@ -1,0 +1,56 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "sandbox-tims-home-temp-stack": {
+        "id": "sandbox-tims-home-temp-stack",
+        "path": "sandbox-tims-home-temp-stack",
+        "children": {
+          "sandbox-tims-home-temp-stack-bucket": {
+            "id": "sandbox-tims-home-temp-stack-bucket",
+            "path": "sandbox-tims-home-temp-stack/sandbox-tims-home-temp-stack-bucket",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "sandbox-tims-home-temp-stack/sandbox-tims-home-temp-stack-bucket/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {
+                    "bucketName": "sandbox-tims-home-temp-stack-bucket",
+                    "websiteConfiguration": {
+                      "indexDocument": "index.html"
+                    }
+                  }
+                }
+              },
+              "Notifications": {
+                "id": "Notifications",
+                "path": "sandbox-tims-home-temp-stack/sandbox-tims-home-temp-stack-bucket/Notifications"
+              }
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "sandbox-tims-home-temp-stack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "sandbox-tims-home-temp-stack/CDKMetadata/Default"
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "sandbox-tims-home-temp-stack/CDKMetadata/Condition"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

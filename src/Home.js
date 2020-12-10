@@ -23,25 +23,34 @@ export default function Home() {
         setGarageState(garageState==="Open"? "Closed" : "Open")
 
     }
-    useEffect (() => {
-        const getGarageState = async() => {
-            const options = {
-                method: "GET",
-                headers: {
-                    Authorization: "Bearer " + state.bearerToken
-                }
+
+    const getGarageState = async() => {
+        const options = {
+            method: "GET",
+            headers: {
+                Authorization: "Bearer " + state.bearerToken
             }
-            const response = await fetch("http://localhost:5000/garageDoor/status", options)
-            const jsonResponse = await response.json()
-            if(jsonResponse.garageStatus===true)
-                setGarageState("Open")
-            else
-                setGarageState("Closed")
         }
+        console.log("get garage state " + state.bearerToken)
+        const response = await fetch("http://localhost:5000/garageDoor/status", options)
+        const jsonResponse = await response.json()
+        if(jsonResponse.garageStatus===true)
+            setGarageState("Open")
+        else
+            setGarageState("Closed")
+    }
+    useEffect (() => {
         getGarageState()
-    },[])
+
+        const interval = setInterval(() => {
+            getGarageState()
+        }, 5000);
+        return () => clearInterval(interval);
+
+    })
     return (
        <div>
+           <div>{state.bearerToken}</div>
            Hello Home - You can not conduct business on continental grounds.
            <div>next time check status on interval</div>
            <div>
